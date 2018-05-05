@@ -1,0 +1,47 @@
+\documentclass[12pt] {article}
+
+\usepackage[margin=1in]{geometry} %one inch margins
+\renewcommand{\baselinestretch}{2} %double space, safe for fancy headers
+\usepackage{pslatex} %Times font
+\usepackage{apacite} %apa citation style
+\bibliographystyle{apacite}
+%\usepackage[pdfborder={0 0 0}]{hyperref}%for hyperlinks without ugly boxes
+\usepackage{graphicx} %for figures
+\usepackage{enumerate} %for lists
+\usepackage{fancyhdr} %header
+\pagestyle{fancy}
+\usepackage[font={small,sf},format=plain,labelfont=bf,up]{caption}
+\usepackage{indentfirst}
+
+\fancyhf{}
+\fancyhead[l,lo]{Qiao Zhang \textit{ CSE8317 Project Report}} %left top header
+\fancyhead[r,ro]{\thepage} %right top header
+
+\begin{document}
+\title{Building a Knowledge Graph from Historical Defect Reports with Orthogonal Defect Classification}
+\author{Qiao Zhang}
+\date \today
+\maketitle
+
+\thispagestyle{empty}
+
+\bigskip
+%\tableofcontents
+\pagebreak
+\setcounter{page}{1}
+\section{Introduction}
+Defect report is commonly a structured natural language artifact generated during the software reliability engineering process.
+A well-structured defect report would be very informative to viewers and very efficient for knowledge acquisition purpose.
+The previous experience (or knowledge) of handling a specific type of defect would be critical to the success of the future defect analysis.
+However, retrieving knowledge from the historical defect reports could be a painful job especially when the volume of reports is high enough.
+Based on the experience of a well-known telecommunication equipment company in China, the number of their historical defect reports has reached 3 million and the number of newly generated defect reports is about 30 thousand each month.
+Without an appropriate approach to standardize, formalize, and organize the historical defect reports, it is basically impossible to retrieve knowledge from the gigantic pool of reports.\par
+
+With orthogonal defect classification (ODC), we can not only classify the defect reports into a few specific types but also fit newly generated defect reports into some pre-determined workflows to improve the engineering efficiency.
+Ontology, as a formal and explicit specification of a shared conceptualization with a complex semantic web structure, is able to standardize and formalize a domain knowledge or the expert interpretation \cite{christina2016an}.
+
+
+
+\pagebreak
+\bibliography{../bib/mybib} %rename to your .bib file
+\end{document}

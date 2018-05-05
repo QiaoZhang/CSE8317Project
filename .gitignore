@@ -1,0 +1,10 @@
+latex/*.aux
+latex/*.bbl
+latex/*.blg
+latex/*.log
+latex/*.synctex.gz
+latex/*.pdf
+latex/*.out
+bib/*.bak
+bib/*.sav
+.venv
