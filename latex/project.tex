@@ -41,15 +41,29 @@ Ontology, as a formal and explicit specification of a shared conceptualization w
 With orthogonal defect classification (ODC), we can not only classify the defect reports into a few specific types but also fit newly generated defect reports into some pre-determined workflows to improve the engineering efficiency.
 Both approaches are able to contribute the the objective of improving the knowledge acquisition tasks in software reliability engineering regarding defect anaylsis. 
 It might be more beneficial to have them combined as one mechanism since one plus one can be more than two.
-Knowledge Graph (KG), which integrates information from various types of resources into an ontology and also applies a reasoning engine to assist deriving new knowledge \cite{ehrlinger2016towards}, is promising to integrate the ODC results of historical defect reports with the ontology, as well as, effectively and efficiently achieve certain types of knowledge acquisition tasks.
+Knowledge Graph (KG), which integrates information from various types of resources into an ontology and also applies a reasoning engine to assist deriving new knowledge \cite{ehrlinger2016towards}, is promising to integrate the ODC results into the ontology to effectively and efficiently achieve certain types of knowledge acquisition tasks.
 This project aims at conducting a feasibility study to explore the methodoly to build a KG from historical defect reports with ODC.
 
 \section{Background}
+\subsection{Ontology}
+By formally defining the relationships among entities, ontology is able to provides the intuition of how to further derive the domain knowledge.
+As a concept-level knowledge representative for sharing purpose, the potential benefits of introducing ontology includes \cite{christina2016an}:
+\begin{itemize}
+    \item Provide explicit and consistent views of knowledge and distributed information
+    \item Support communication among entire development team 
+    \item Enable automated data processing and analysis
+    \item Improve search quality by taking advantage of its semantic web structure
+\end{itemize}
+\shortciteA{iliev2012automated} have investigated using ontologies to automatically predict the defect severity based on designed knowledge.
+Instead of defect severity prediction, this study aims at defect handling once it has been detected and categorized.
+
+\subsection{Knowledge Graph}
 \subsection{Orthogonal Defect Classification}
 Orthogonal defect classification (ODC) has been known to reduce the effort of defect analysis especially for root cause analysis \cite{buglione2006introducing}.
-With root cause analysis, the classified defect can be put into a pre-determined workflow which    
-\subsection{Ontology}
-\subsection{Knowledge Graph}
+With identified root cause, the classified defects can be put into pre-determined workflows that are carefully designed for processing defect effectively and effciently. 
+Most existing defect classification approaches and processes are ad hoc and significantly relied on the experience of historical projects and domain expert knowledge of analysts. 
+Once the amount of un-classified defects has been accumulated to a certain amount, it will become impossible to be conducted for the ODC analysis.
+\shortciteA{huang2015autoodc} have proposed a learning-based automatic ODC (AutoODC) approaches by casting it as a supervised text classification problem.
 
 \section{Methodology}
 
