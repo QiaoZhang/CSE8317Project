@@ -34,7 +34,7 @@ Defect report is commonly a structured natural language artifact generated durin
 A well-structured defect report would be very informative to viewers and very efficient for knowledge acquisition purpose.
 The previous experience (or knowledge) of handling a specific type of defect would be critical to the success of the future defect analysis.
 However, retrieving knowledge from the historical defect reports could be a painful job especially when the volume of reports is high enough.
-Based on the experience of a well-known telecommunication equipment company in China, the number of their historical defect reports has reached 3 million and the number of newly generated defect reports is about 30 thousand each month.
+Based on the experience of a well-known telecommunication equipment company, the number of their historical defect reports has reached 3 million and the number of newly generated defect reports is about 30 thousand each month.
 Without an appropriate approach to standardize, formalize, and organize the historical defect reports, it is basically impossible to retrieve knowledge from the gigantic pool of reports.\par
 
 Ontology, as a formal and explicit specification of a shared conceptualization with a complex semantic web structure, is able to standardize and formalize a domain knowledge or the expert interpretation \cite{christina2016an}.
@@ -47,7 +47,7 @@ This project aims at conducting a feasibility study to explore the methodoly to 
 \section{Background}
 \subsection{Ontology}
 By formally defining the relationships among entities, ontology is able to provides the intuition of how to further derive the domain knowledge.
-As a concept-level knowledge representative for sharing purpose, the potential benefits of introducing ontology includes \cite{christina2016an}:
+As a concept-level knowledge representative for sharing purpose, the potential benefits of applying ontology includes \cite{christina2016an}:
 \begin{itemize}
     \item Provide explicit and consistent views of knowledge and distributed information
     \item Support communication among entire development team 
@@ -55,17 +55,55 @@ As a concept-level knowledge representative for sharing purpose, the potential b
     \item Improve search quality by taking advantage of its semantic web structure
 \end{itemize}
 \shortciteA{iliev2012automated} have investigated using ontologies to automatically predict the defect severity based on designed knowledge.
-Instead of defect severity prediction, this study aims at defect handling once it has been detected and categorized.
+However, it is already beyond the scope of ontology since the author has already introducted a reasoning engine to derieve new knowledge.  
+In other word, the ontology might be insufficient for defect analysis especially for an specific instance-level analysis task. 
 
 \subsection{Knowledge Graph}
+Knowledge Graph (KG) research has been concentrated by the state-of-the-art literature in recent years since Google posted a blog entry and described how they use KG to enhance their search engine in 2012\footnote{https://googleblog.blogspot.co.at/2012/05/introducing-knowledge-graph-things-not.html}.
+The definition of KG has been various from each other until \shortciteA{ehrlinger2016towards} conducted a literature review to synthesize all definitions.
+Based on the literature review results, the KG consists of knowledge base and reasoning engine while the ontology is one specific type of knowledge base.
+Thus, the defect severity analysis methodology from \shortciteA{iliev2012automated} is very close to the definition of KG, and it proves the necessity of applying KG to the defect analysis domain. 
+However, the KG has larger scope than ontology since it is able to integrate more information from difference resources as an instance-level knowledge representative. 
+
 \subsection{Orthogonal Defect Classification}
 Orthogonal defect classification (ODC) has been known to reduce the effort of defect analysis especially for root cause analysis \cite{buglione2006introducing}.
 With identified root cause, the classified defects can be put into pre-determined workflows that are carefully designed for processing defect effectively and effciently. 
 Most existing defect classification approaches and processes are ad hoc and significantly relied on the experience of historical projects and domain expert knowledge of analysts. 
 Once the amount of un-classified defects has been accumulated to a certain amount, it will become impossible to be conducted for the ODC analysis.
 \shortciteA{huang2015autoodc} have proposed a learning-based automatic ODC (AutoODC) approaches by casting it as a supervised text classification problem.
+In this study, the proposed KG is trying to integrate the ontology which contains syntatic data retrieved from defect reports, with the ODC results which can be either manually evaluated or automatically derieved with AutoODC.  
 
 \section{Methodology}
+\subsection{Data Collection}
+The defect reports investigated in this research are provided by a large telecommunication equipment company with sensitive data desensitized.
+The size of dataset to be observed is 10,000 defect reports and most defect reports are bilingual which increased the difficulty of applying AutoODC.
+Since the application of AuotODC is not the concentration of this study, we can assume that the ODC analysis can be successfully conducted while the ODC results used in this study are actually derieved manually.
+However, the AutoODC is a critical component to the success of building a KG of defect handling since the actual volumn of historical defect reports of the company is considerablely huge.
+Due to the privacy consideration and disclosure policy, it is not possible for us to collect the details of how the company process the defect once it is reported and categorized.
+The defect handling process mentioned in this study are mostly interpreted from the "solution" part of defect reports and simulated based on the existing knowledge.
+
+\subsection{Building Knowledge Graph}
+According to the definition provided by \shortciteA{ehrlinger2016towards}, the design of KG consists of (1) the generation of ontology and (2) the development of reasoning engine.
+\subsubsection{Generate Ontology}
+
+By observing the syntatic characteristics of defect reports based on the observation of dataset, ww find the common connection among them.  
+The next step is to extract keyword based on the summarization as the nodes of the ontology (or KG) as well as recovery links (or relationships) between nodes.
+The third step is 
+
+\section{Results and Discussion}
+\subsection{Ontology}
+\begin{figure*}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../figures/OntologyOfDefectReport.pdf}
+    \caption{Ontology generated based on defect report}
+    \label{fig:defectreport}
+\end{figure*}
+\subsection{Knowledge Graph}
+\subsection{Reasoning Engine}
+\subsection{Application Scenario}
+
+\section{Conclusion and Future Works}
+
 
 \pagebreak
 \bibliography{../bib/mybib} %rename to your .bib file
