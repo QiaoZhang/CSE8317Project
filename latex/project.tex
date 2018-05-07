@@ -85,10 +85,17 @@ The defect handling process mentioned in this study are mostly interpreted from 
 \subsection{Building Knowledge Graph}
 According to the definition provided by \shortciteA{ehrlinger2016towards}, the design of KG consists of (1) the generation of ontology and (2) the development of reasoning engine.
 \subsubsection{Generate Ontology}
-
-By observing the syntatic characteristics of defect reports based on the observation of dataset, ww find the common connection among them.  
-The next step is to extract keyword based on the summarization as the nodes of the ontology (or KG) as well as recovery links (or relationships) between nodes.
-The third step is 
+Manually building an ontology is commonly an incremental process.
+By observing the existing elements included in defect reports, we are able to find the common attributes of a report and each attribute is a node connected to the artifact node "defect report".
+Some attribute nodes can be further extended into a set of sub-nodes if a detailed analysis is necessary or the sub-nodes have relationships with other nodes in the ontology.  
+For instance, the description is a node connected to the defect report node while the code snippet in the description can be traced to a specific test case or a class-level file in the repository.
+Once the initial ontology is generated, the next step is to expand it by finding the external relationships that links the ontology to other knowledge domain.
+In this study, the possible external knowledge domain other than the defect report ontology includes defect analysis, code development, testing, risk management, human resource and so on.  
+By continuously expanding the ontology either manually or automatically, the included knowledge will be sufficient to upscale to the KG level by adding a reasoning engine upon it.
+\subsubsection{Develope Reasoning Engine}
+The reasoning engine is designed and developed based on the objective of designing the KG.
+In this study, the objective is to build an KG that is able to standardize and formalize the process of handling a defect report once the ODC result retrieved.
+Hence, the 
 
 \section{Results and Discussion}
 \subsection{Ontology}
